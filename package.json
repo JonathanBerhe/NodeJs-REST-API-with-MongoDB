@@ -1,0 +1,11 @@
+{
+  "name": "restful-api",
+  "version": "1.0.0",
+  "description": "some apis with node, express and mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jonathan Berhè",
+  "license": "ISC"
+}
