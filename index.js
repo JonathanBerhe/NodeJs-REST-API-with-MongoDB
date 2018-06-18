@@ -1,8 +1,14 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
-// set up express app
+// setup express app
 const app = express();
 
+
+// middleware for parsing json body
+app.use(bodyParser.json());
+
+// init routes
 app.use('/api', require('./routes/api'));
 
 // listen for request

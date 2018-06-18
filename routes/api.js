@@ -8,7 +8,12 @@ router.get('/ninjas', function(req, res){
 
 // POST api/ninjas -> add new ninjas from the db
 router.post('/ninjas', function(req, res){
-    res.send({type: 'POST'});
+    console.log(req.body);
+    res.send({
+        type: 'POST',
+        title: req.body.title,
+        isDOne: req.body.isDOne
+    });
 });
 
 // PUT api/ninjas/7 -> update ninjas from the db
