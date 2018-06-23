@@ -34,6 +34,7 @@ const PatchSchema = new Schema({
     }
 });
 
-const Patch = mongoose.model('patch', PatchSchema);
+const MongoCollection = mongoose.connection.useDb('patch');
+const Patch = MongoCollection.model('patch', PatchSchema);
 
 module.exports = Patch;

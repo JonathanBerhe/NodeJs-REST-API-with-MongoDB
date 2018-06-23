@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 
 //  create pv Schema & model
 const PuntoVenditaSchema = new Schema({
-    codice_pv: {
+    codPv: {
         type: String,
         required: [true, 'codice_pv field is required']
     },
-    indirizzo:{
+    address:{
         type: String,
         required: false
     },
-    citta:{
+    city:{
         type: String,
         required: false
     },
@@ -25,11 +25,12 @@ const PuntoVenditaSchema = new Schema({
         required: false
     },
     ip:{
-        type: Number,
+        type: String,
         required: false
     }
 });
 
-const PuntoVendita = mongoose.model('pv', PuntoVenditaSchema);
+const MongoCollection = mongoose.connection.useDb('pv');
+const PuntoVendita = MongoCollection.model('pv', PuntoVenditaSchema);
 
 module.exports = PuntoVendita;
