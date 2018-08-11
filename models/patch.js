@@ -2,12 +2,6 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-let options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",  
-    day: "numeric" 
-};
 
 // create patch Schema & model
 const PatchSchema = new Schema({
@@ -19,6 +13,10 @@ const PatchSchema = new Schema({
         type: String,
         required: [true, 'Description field is required']
     },
+    version:{
+        type: String,
+        required: [true, 'Version is required']
+    },
     path:{
         type: String,
         required: [true, 'Path field is required']
@@ -29,7 +27,7 @@ const PatchSchema = new Schema({
     },
     created:{
         type: Date,
-        default: new Date(Date.now()).toLocaleString('it-IT', { timeZone: 'UTC'}),
+        default: new Date(Date.now()).toLocaleString('it-IT'),
         required: false
     }
 });
