@@ -2,7 +2,7 @@
   "name": "restful-api",
   "version": "1.0.0",
   "description": "some apis with node, express and mongodb",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "test"
   },
