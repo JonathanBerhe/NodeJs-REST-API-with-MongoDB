@@ -2,8 +2,8 @@ const express       = require('express');
 const router        = express.Router();
 
 // imports models
-const Maschine      = require('../models/maschines');
-const Package         = require('../models/packages');
+const Maschine          = require('../models/maschines');
+const Package           = require('../models/packages');
 
 /////////////////////// GET REQUESTS ///////////////////////
 
@@ -14,10 +14,10 @@ router.get('/maschine', function(req, res, next){
     });
 });
 
-// GET api/patch -> list of patch from the db
-router.get('/patch', function(req, res, next){
-    Package.find().then(function(patch){
-        res.send({patch});
+// GET api/package -> list of package from the db
+router.get('/package', function(req, res, next){
+    Package.find().then(function(package){
+        res.send({package});
     });
 });
 

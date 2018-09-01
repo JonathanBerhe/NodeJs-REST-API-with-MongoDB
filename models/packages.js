@@ -13,10 +13,6 @@ const PackageSchema = new Schema({
         type: String,
         required: [true, 'Description field is required']
     },
-    version:{
-        type: String,
-        required: [true, 'Version is required']
-    },
     path:{
         type: String,
         required: [true, 'Path field is required']
