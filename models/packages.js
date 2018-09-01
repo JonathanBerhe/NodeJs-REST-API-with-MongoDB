@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-// create patch Schema & model
-const PatchSchema = new Schema({
+// create Package Schema & model
+const PackageSchema = new Schema({
     name:{
         type: String,
         required: [true, 'Name field is required']
@@ -32,7 +32,7 @@ const PatchSchema = new Schema({
     }
 });
 
-const MongoCollection = mongoose.connection.useDb('patch');
-const Patch = MongoCollection.model('patch', PatchSchema);
+const MongoCollection = mongoose.connection.useDb('packages');
+const Package = MongoCollection.model('package', PackageSchema);
 
-module.exports = Patch;
+module.exports = Package;

@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 //  create pv Schema & model
-const PuntoVenditaSchema = new Schema({
-    codPv: {
+const MaschineSchema = new Schema({
+    maschine: {
         type: String,
-        required: [true, 'codice_pv field is required']
+        required: [true, 'maschine field is required']
     },
     address:{
         type: String,
@@ -30,7 +30,7 @@ const PuntoVenditaSchema = new Schema({
     }
 });
 
-const MongoCollection = mongoose.connection.useDb('pv');
-const PuntoVendita = MongoCollection.model('pv', PuntoVenditaSchema);
+const MongoCollection = mongoose.connection.useDb('maschines');
+const Maschine = MongoCollection.model('maschine', MaschineSchema);
 
-module.exports = PuntoVendita;
+module.exports = Maschine;
